@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="stackumi">
+  <!-- The mark at tab-bar size: two plates, not three, and the lit plate is solid. At 16 px a
+       translucent wash reads as a smudge and a solid gold plate reads as a light. Solid slate ground
+       so the mark holds against both a light and a dark tab bar without a media query a favicon
+       may not honour. -->
+  <defs>
+    <linearGradient id="stackumi-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d29a"/><stop offset="1" stop-color="#d9a24e"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="24" height="24" rx="5.5" fill="#0f1519"/>
+  <rect x="3" y="8.5" width="12.5" height="12.5" rx="3.6" fill="#1c252b" stroke="#4a5964" stroke-width="1.2"/>
+  <rect x="8.5" y="3" width="12.5" height="12.5" rx="3.6" fill="url(#stackumi-gold)"/>
+</svg>

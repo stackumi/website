@@ -1,0 +1,81 @@
+---
+import Mark from '../assets/mark.svg';
+import Wordmark from '../assets/wordmark.svg';
+/* The placeholder: the mark and the wordmark on the slate ground, nothing else. Colours and the
+   lit plate are the product's own tokens (see stackumi-visual-identity.md in the main repo). */
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0f1519" />
+    <meta name="description" content="stackumi — assembled on the stack." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>stackumi</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="lockup">
+        <Mark class="mark" aria-hidden="true" />
+        <Wordmark class="wordmark" role="img" aria-label="stackumi" />
+      </h1>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #0f1519;
+    --plate: #1c252b;
+    --edge: #38454f;
+    --ink: #e8ecef;
+    --light: #ecc07a;
+    --glow: rgba(236, 192, 122, 0.22);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background:
+      radial-gradient(60% 50% at 56% 42%, rgba(236, 192, 122, 0.07), transparent 70%),
+      var(--bg);
+    color: var(--ink);
+  }
+  main {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: clamp(24px, 6vw, 64px);
+  }
+  .lockup {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2.6vw, 1.5rem);
+  }
+  .mark {
+    width: clamp(56px, 11vw, 96px);
+    height: auto;
+    flex: none;
+  }
+  .mark .pl { fill: var(--plate); stroke: var(--edge); stroke-width: 1.5; }
+  .mark .top { stroke: var(--light); stroke-opacity: 0.85; stroke-width: 1.8; }
+  .mark .top { animation: breathe 4.5s ease-in-out infinite; }
+  @keyframes breathe {
+    0%, 100% { filter: drop-shadow(0 0 6px var(--glow)); }
+    50%      { filter: drop-shadow(0 0 16px var(--glow)); }
+  }
+  .wordmark {
+    width: clamp(220px, 44vw, 460px);
+    height: auto;
+  }
+  .wordmark .ink { fill: var(--ink); }
+  .wordmark .lit { fill: var(--light); }
+  @media (prefers-reduced-motion: reduce) {
+    .mark .top { animation: none; }
+  }
+</style>
